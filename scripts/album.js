@@ -29,15 +29,16 @@ var albumMarconi = {
 };
 
 var createSongRow = function(songNumber, songName, songLength) {
-    var template = 
+     var template =
         '<tr class="album-view-song-item">'
-        +'  <td class="song-item-number"> + songNumber + '</td>'
-        +'  <td class="song-item-title"> + songName + '</td>'
-        +'  <td class="song-item-duration"> + songLength + '</td>'
-        +'</tr>'
-        ;
-    return template;
-};
+      + '  <td class="song-item-number">' + songNumber + '</td>'
+      + '  <td class="song-item-title">' + songName + '</td>'
+      + '  <td class="song-item-duration">' + songLength + '</td>'
+      + '</tr>'
+      ;
+ 
+     return template;
+ };
 
 var setCurrentAlbum = function(album) {
     var albumTitle = document.getElementsByClassName('album-view-title')[0];
