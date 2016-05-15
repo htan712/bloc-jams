@@ -28,18 +28,35 @@ var albumMarconi = {
     ]
 };
 
-var createSongRow = function(songNumber, songName, songLength) {
-    var template = 
-        '<tr class="album-view-song-item">'
-        +'  <td class="song-item-number"> + songNumber + '</td>'
-        +'  <td class="song-item-title"> + songName + '</td>'
-        +'  <td class="song-item-duration"> + songLength + '</td>'
-        +'</tr>'
-        ;
-    return template;
+var albumHinder = {
+    title: 'Extreme Behavior',
+    artists: 'Hinder',
+    label: 'Universal Republic Records',
+    year: '2005',
+    albumArtUrl: 'assets/images/Hinder.jpeg',
+    songs: [
+        { title: 'Get Stoned', duration: '3:38' },
+        { title: 'How Long', duration: '3:25' },
+        { title: 'By the Way', duration: '3:52' },
+        { title: 'Better Than Me', duration: '3:44' },
+        { title: 'Lips of an Angel', duration: '4:22' }
+    ]
 };
 
+var createSongRow = function(songNumber, songName, songLength) {
+     var template =
+        '<tr class="album-view-song-item">'
+      + '  <td class="song-item-number">' + songNumber + '</td>'
+      + '  <td class="song-item-title">' + songName + '</td>'
+      + '  <td class="song-item-duration">' + songLength + '</td>'
+      + '</tr>'
+      ;
+ 
+     return template;
+ };
+
 var setCurrentAlbum = function(album) {
+    
     var albumTitle = document.getElementsByClassName('album-view-title')[0];
     var albumArtist = document.getElementsByClassName('album-view-artist')[0];
     var albumReleaseInfo = document.getElementsByClassName('album-view-release-info')[0];
@@ -60,4 +77,15 @@ var setCurrentAlbum = function(album) {
 
 window.onload = function() {
     setCurrentAlbum(albumPicasso);
-}
+    
+    var albums = [albumPicasso, albumMarconi, albumHinder]
+    var index = 0;
+    
+    albumImage.addEventListener("click", function(event) {
+        setCurrentAlbum(albums[index]);
+        index++;
+        if (index == albums.length) {
+            index = 0;
+        }
+    });
+};
