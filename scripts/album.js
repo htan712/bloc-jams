@@ -61,7 +61,6 @@ var setCurrentAlbum = function(album) {
 // find path to return 'song-item-number'
 var findParentByClassName = function(element, targetClass) {
     if (element) {
-        debugger
         var currentParent = element.parentElement;
         // if there's no parent element
         if (currentParent.length == 0) {
