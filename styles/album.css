@@ -44,8 +44,16 @@ body.album {
  
 .album-view-song-item {
     height: 3rem;
-    border-bottom: 5px solid rgba(255,255,255,0.5);
+    border-bottom: 5px solid black;
 }
+
+/* not working either */
+/*
+tr {
+    border-bottom: 5px solid black;
+    z-index: 100;
+}
+*/
  
 .song-item-number {
     width: 5%;
